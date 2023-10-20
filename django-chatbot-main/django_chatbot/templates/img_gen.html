@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+body 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  /* overflow-y: auto; */
+}
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before 
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span 
+{
+  position: relative;
+  display: block;
+  width: calc(4.25vw - 25px);
+  height: calc(4.25vw - 25px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover 
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+section .signin
+{
+  position: absolute;
+  width: 400px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signin .content h2 
+{
+  font-size: 2em;
+  color: #0f0;
+  text-transform: uppercase;
+}
+section .signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+.signin .content .form .links a:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 1100px)
+{
+  section span 
+  {
+    width: calc(4vw - 2px);
+    height: calc(4vw - 2px);
+  }
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(6vw - 3px);
+    height: calc(6vw - 3px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(8vw - 1px);
+    height: calc(8vw - 1px);
+  }
+}
+
+.main_content{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0,0.5);  
+    z-index: 1000;  
+}
+/* 
+.first_column{
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: #aaa;
+
+} */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(21 101 21 / 76%); 
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #d5d2d2;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* .side_Bottom{
+  position: fixed;  
+  bottom: 10px;
+  display: flex;
+  padding: 5px;
+  align-items: center; 
+} */
+
+.side_Bottom {
+  position: absolute;
+  bottom: 10px;  
+  padding: 5px; 
+  padding-top: 10px;  
+  width: 250px;
+}
+
+.dropdown {
+  position: relative;
+  /* display: flex; */
+  align-items: center;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 85px;
+  bottom: 130%; /* Adjust this value as needed */
+  /* right: 0; */
+  background-color: transparent;
+  color: white;
+  min-width: 160px;  
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  border: 1px solid rgba(234, 220, 220, 0.215);
+  color: white; /* Change the text color as needed */
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(62, 61, 61, 0.327);
+}
+
+.dropdown h4{
+  color: white;
+}
+
+.side_Bottom:hover{
+  background-color: rgba(209, 209, 209, 0.5);
+  border-radius: 8px;
+  color: white;
+}
+
+.side_Bottom:hover .dropdown-content {
+  display: block;
+}
+
+.circle{
+
+  position: relative;
+  right: -20%;
+  /* justify-content: end; */  
+
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;  
+}
+
+#Openbutn{
+  padding: 10px;
+}
+
+.navbar{
+
+  height: 80px;
+  background-color: rgba(84, 82, 82, 0.384);
+}
+
+.input-group{
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatSide {
+    padding: 70px;
+    max-height: 100vh; /* Set a maximum height for the chat section */
+    overflow-y: auto;
+}
+
+li.message.sent {
+    color: white;
+    margin-bottom: 20px;
+    background-color: #b2acac8d;
+    border-radius: 15px;
+}
+.message-text{
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  /* background-color: #b2acac5d; */
+}
+
+
+li.message.received{
+  background-color: #7875755d;
+  border-radius: 15px;
+}
+
+input.form-control.message-input {
+    padding: 9px;
+}
+/* padding: 30px;
+    margin: 20px; */
+
+/* .message-text{
+    color: white;
+    padding: 30px;
+    margin: 20px;
+} */
+
+/* .chatSide{
+  position: fixed;
+  top: 100px;
+  padding: 25px;
+  background-color: #bbb;
+  margin: 10px;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(64, 190, 64, 0.945); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+.burger_btn{
+  height: 83px;
+  width: 0;
+}
+
+.reply-item
+{
+  display: flex;
+  justify-content: space-around;
+
+}
+.message-sender {
+    margin-bottom: 10px;
+}
+
+/*  */
+.switch-btn {
+  padding: 9px 3px;
+    background-color: #fff;
+    border-radius: 50px;
+    margin: auto;
+}
+.text-btn {
+  color:#2bdc2b ;
+    background-color: #fff;
+    padding: 8px 10px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.text-btn:hover, .img-btn:hover{
+  color: #0f0;
+}
+a.active, a.active:hover {
+    color: #fff;
+    background-color: #2bdc2b;
+
+}
+.img-btn
+{
+  color:#2bdc2b ;
+    background-color: #fff;
+    padding: 8px 10px;
+    border-radius: 50px; 
+}
+/*  */
+
+/* preloader button active */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#preloader{
+  display: none;
+}
+
+</style>
+<body>
+
+    <section> 
+      <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+      <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+      <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+      <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+      <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+
+
+        <div class="main_content">   
+          
+
+          <div class="row">
+
+            <div class="col">
+
+              <div class="navbar">
+
+                <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <!-- <a href="#">About</a>
+                  <a href="#">Services</a>
+                  <a href="#">Clients</a>
+                  <a href="#">Contact</a> -->
+  
+                  <div class="side_Bottom">
+                    <div class="dropdown">
+
+                      <div class="row">
+                        <div class="col-2">
+                          <img alt="User" loading="lazy" width="32" height="32" class="user-avatar" src="https://s.gravatar.com/avatar/b31937dc782d94c42672452d57e166a6?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fab.png">
+                        </div>
+
+                        <div class="col-7">
+
+                          <h4>{{user.username}}</h4>  
+                        </div>
+
+                        <div class="col-3">
+                          <div class="circle">                          
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>                          
+                          </div>
+                        </div>
+
+                      </div>                        
+
+                      <div class="dropdown-content">
+                        <!-- Dropdown content goes here -->
+                        <a href="/logout/">logout</a>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+
+                <div class="burger_btn">
+
+                  <span id="Openbutn" style="color: white; background: none;  font-size:30px; cursor:pointer;" onclick="openNav()">&#9776;</span>
+
+                </div>
+
+
+                <div class="switch-btn">
+                  <a href="/chatpage/" class="text-btn"><i class="fa">&#xf086;</i></a>
+                  <a href="/img_gen/" class="img-btn active"><i class="fa">&#xf03e;</i></a>
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+          <!-- chat bot content side -->
+          <div class="row">
+            <div class="col">
+
+              <div class="chatSide" id="chatSide">
+                
+                <div class="card-body messages-box" id="message_box">
+      
+                  <ul class="list-unstyled messages-list">
+                    
+                    <!-- <li class="message received">
+                      <div class="message-text">
+                        <div class="message-sender">
+                          <b>AI Chatbot</b>
+                        </div>
+                        <div class="message-content">
+                          Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
+                        </div>
+                      </div>
+                    </li> -->
+            
+                    {% for chat in images %}
+                      {% if chat.user == request.user %}
+
+            
+                        <li class="message sent">
+                          <div class="message-text">
+                            <div class="message-sender">
+                              <b>You {{chat.user}}</b>
+                            </div>
+                            <div class="message-content">
+                              {{chat.phrase}}
+                            </div>
+                          </div>
+                        </li>
+            
+                    <li class="message received">
+                      <div class="message-text" >
+                        <div class="message-sender" id="message-sender">
+
+                            <div class="row">
+                                <div class="col-9">
+                                  <b  class="text-white">AI Chatbot</b>
+                                </div>
+
+                                <div class="col-3">
+
+                                  <div class="leftSideContent">
+
+                                    <div class="reply-item">
+
+                                      <div>
+                                        {{chat.created_at}}
+                                      </div>
+
+                                      <div>
+                                        <a style="cursor: pointer;" id="button_{{ forloop.counter }}" data-image-src="{{ chat.ai_image.url }}"><i class="fa fa-download"></i></a> 
+                                      </div>
+
+                                      <!-- <div>
+                                        <a style="cursor: pointer;"><i style="font-size:15px; color:white;" id="play_{{ forloop.counter }}" class="fa">&#xf028;</i></a>
+                                      </div> -->
+
+                                  </div>
+                                  </div>
+
+                                </div>
+
+                            </div>
+                          
+                        </div>
+                        <div class="message-content text-white" id="answer_{{ forloop.counter }}">
+                            <img id="img_{{ forloop.counter }}" src="{{ chat.ai_image.url }}" class="img-responsive" alt="">                            
+                          <!-- |linebreaks -->
+                        </div>
+                      </div>
+                    </li>
+
+                    <script>
+
+                            var btnDownload = document.getElementById('button_{{ forloop.counter }}');
+
+                            btnDownload.addEventListener('click', handleDownloadClick);
+
+                            function handleDownloadClick() {
+                                var imageSrc = this.getAttribute('data-image-src');
+                                var fileName = getFileName(imageSrc);
+                                saveAs(imageSrc, fileName);
+                            }
+
+                            function getFileName(str) {
+                                return str.substring(str.lastIndexOf('/') + 1);
+                            }
+
+
+                    </script> 
+            
+                      {% endif %}
+                    {% endfor %}
+                    
+                  </ul>
+                  
+                </div>
+                <br><br>
+                <br><br>
+                <br><br>
+              </div>
+              <form class="message-form" action="/img_gen/" method="post">
+                {%csrf_token%}
+                <div class="input-group">
+            
+                  <!-- <textarea class="form-control message-input" placeholder="Type your message..."></textarea> -->
+                  <!-- <textarea id="autoResizeTextArea" class="form-control message-input" placeholder="Type your message..."></textarea> -->
+            
+                  <!-- <textarea id="autoResizeTextArea" class="form-control message-input" placeholder="Type your text..." oninput="resizeTextarea(event)"></textarea> -->
+                  <input type="text" name="user_input" id="textarea" class="form-control message-input" placeholder="Type your message..." required>
+                  <!-- <input type="text" id="textarea" class="form-control message-input" placeholder="Type your message..."> -->
+                  <div class="input-group-append">
+
+                    <div class="row">
+
+                        <div class="col p-0" style="margin-left:20px;">
+
+                          <button type="submit" id="submit" style="background-color: #2bdc2b; color: white;" class="btn  p-0 btn-send" >
+                            <i style="font-size: 30px; margin: 5px;" id="sendBtn" class="material-icons">&#xe163;</i>                        
+                          </button>
+
+                          <button type="button" id="preloader" class="btn btn-light p-0 btn-send">
+                            <img src="/static/Spinner-1s-150px.gif" style="width: 30px; margin: 5px;">
+                          </button>
+
+                        </div>
+
+                        <div class="col p-0" style="margin-left:5px;">
+
+                          <button type="button" id="record" style="background-color: #2bdc2b;" class="btn btn-dark p-0 btn-send">
+                            <!-- <i style="font-size: 30px; margin: 5px;" id="sendBtn" class="material-icons">&#xe163;</i> -->
+                            <i style="font-size: 30px; margin: 5px; padding-left:5px; padding-right:5px;" class='fas'>&#xf130;</i>                    
+                          </button>
+
+                        </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- chat bot content side -->
+
+
+              
+
+              
+
+        </div>
+
+
+        <!-- <div class="signin"> 
+
+
+        </div>  -->
+
+  </section> <!-- partial --> 
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="/static/FileSaver.js-2.0.2/dist/FileSaver.min.js"></script>
+  <script>
+      
+    // this is for navbar items
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("Openbutn").style.display = "none";      
+    }
+
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("Openbutn").style.display = "block";    
+    }    
+
+    const messagesList = document.querySelector('.messages-list');
+    const messageForm = document.querySelector('.message-form');
+    const messageInput = document.querySelector('.message-input');
+    const chatSide = document.querySelector(".chatSide");
+    const submit = document.getElementById('submit');
+
+
+    let speech = new SpeechSynthesisUtterance();
+    let isSpeaking = false;
+
+
+    // this function is for scroll down the page after submit answer
+    function scrollChatToBottom() {
+      chatSide.scrollTop = chatSide.scrollHeight;
+    }
+    
+    // this function is for reload function
+    function reloadPage() {
+      location.reload();
+    }
+
+
+    function hidepreloader(){
+      document.getElementById("preloader").style.display = "none";
+      document.getElementById("submit").style.display = "block";      
+    }
+
+    submit.onclick = showpreloader;
+
+    function showpreloader(){
+      document.getElementById("preloader").style.display = "block";
+      document.getElementById("submit").style.display = "none";
+    }
+
+
+    // this function is for send message
+    // messageForm.addEventListener('submit', (event) => {
+    //   event.preventDefault();
+
+    //   const message = messageInput.value.trim();
+    //   if (message.length === 0) {      
+    //     return;
+    //   }
+
+    //   const messageItem = document.createElement('li');
+    //   messageItem.classList.add('message', 'sent');
+    //   messageItem.innerHTML = `
+    //       <div class="message-text">
+    //           <div class="message-sender">
+    //               <b>You</b>
+    //           </div>
+    //           <div class="message-content">
+    //               ${message}
+    //           </div>
+    //       </div>`;
+    //   messagesList.appendChild(messageItem);      
+    //   messageInput.value = '';
+
+
+    //   // here i am calling the page down function
+    //   scrollChatToBottom(); 
+    //   showpreloader()   
+      
+
+    //   fetch('', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //     body: new URLSearchParams({
+    //       'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+    //       'message': message          
+    //     })
+    //   })
+    
+    //   .then(response => response.json())
+    //   .then(data => {
+        
+    //     // here i am calling the page down function
+    //     scrollChatToBottom();
+    //     hidepreloader();    
+    //     // reloadWebPage();  
+
+    //     // reloadPage();
+
+    //     // $(document).ready(function() {
+    //     //     reloadWebPage();
+    //     // });        
+      
+    //     const response = data.response;
+    //     // reloadPage();
+        
+    //     const messageItem = document.createElement('li');                      
+    //     messageItem.classList.add('message', 'received');
+    //     messageItem.innerHTML = `
+    //       <div class="message-text">
+    //           <div class="message-sender">
+    //             <b>AI Chatbot</b>
+    //           </div>
+    //           <div class="message-content">
+    //               ${response}
+    //           </div>
+    //       </div>
+    //     `;
+    //     messagesList.appendChild(messageItem);
+    //   });
+      
+    // });
+
+    scrollChatToBottom();
+
+
+
+
+    const textarea = document.getElementById("autoResizeTextArea");
+
+    function resizeTextarea(event) {
+        const textarea = event.target;
+
+        textarea.style.height = "auto"; // Reset the height
+        textarea.style.height = textarea.scrollHeight + "px";
+
+        if (event.inputType === "insertLineBreak") {
+            event.preventDefault();
+            submitData(textarea.value);
+        }
+    }
+
+    function submitData(data) {
+        // Add your data submission logic here
+        console.log("Submitting:", data);
+    }
+
+    // Speech to voice
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default Enter key behavior (e.g., form submission)
+            // Replace "your-id" with the actual ID of the element you want to submit
+            document.getElementById("submit").click();
+        }
+    });
+
+    // this code is for speech to text function
+    const Showtext = document.getElementById("textarea");
+    const recordButton = document.getElementById("record");
+    let sr = window.webkitSpeechRecognition || window.SpeechRecognition;
+    let spRec = new sr();
+    let isRecording = false;
+
+    recordButton.addEventListener("click", () => {
+        if (!isRecording) {
+            spRec.start();
+            // recordButton.textContent = "Stop"; 
+            isRecording = true;
+        } else {
+            spRec.stop();
+            // recordButton.textContent = "Record";
+            isRecording = false;
+        }
+    });
+
+    spRec.onresult = (res) => {
+        let text = Array.from(res.results)
+            .map((r) => r[0])
+            .map((txt) => txt.transcript)
+            .join("");
+          Showtext.value = text;
+    };    
+
+
+    // this function is for saving data into localStorage and if user entered more then 3 times same data so one audio will start automatically 
+
+    // function playAudioOnCondition() {
+    //     if (consecutiveEntries > 2) {
+    //         let audio = new Audio("/static/Ek_din_Mar.mp3");
+    //         audio.play();
+    //     }
+    // }
+
+    function playAudioOnCondition() {
+        if (consecutiveEntries > 2) {
+            let audio = new Audio("/static/Ek_din_Mar.mp3");
+            audio.onended = function () {
+                audio.play(); // Restart the audio when it ends
+            };
+            audio.play(); // Start playing the audio
+        }
+    }
+
+    // Variables to keep track of consecutive entries
+    let consecutiveEntries = 0;
+    let previousData = "";
+
+    // Function to store data in localStorage
+    function myfunc(event) {
+        // event.preventDefault();
+
+        const inputField = document.getElementById('textarea').value;
+
+        // Check if the input data matches the previous data
+        if (inputField === previousData) {
+            consecutiveEntries++;
+
+            // If three consecutive entries are the same, show an alert
+            if (consecutiveEntries >= 2) {
+                // alert("You entered the same data three times in a row.");
+                playAudioOnCondition();
+                // console.log("You entered the same data");
+            }else{
+              reloadPage();
+            }
+        } else {
+            // Reset the count if the data is different
+            consecutiveEntries = 0;
+            reloadPage();
+        }
+
+        previousData = inputField;
+
+        const existingData = localStorage.getItem('inputField');
+        let newData = inputField;
+
+        if (existingData) {
+            // Append the new data to existing data
+            newData = existingData + ' | ' + inputField;
+        }
+
+        localStorage.setItem('inputField', newData);
+
+        // Call the function to check the data from localStorage after storing it        
+    }
+
+
+    // Add an event listener to the submit button
+    // var clickbutton = document.getElementById('submit');
+    // clickbutton.addEventListener('submit', myfunc);
+    
+    // messageForm.addEventListener('submit', (event) => {
+
+    </script>
+
+</body>
+</html>

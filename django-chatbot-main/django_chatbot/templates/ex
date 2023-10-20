@@ -1,0 +1,55 @@
+{% for chat in chats %}
+                      {% if chat.user == request.user %}
+            
+                        <li class="message sent">
+                      <div class="message-text">
+                        <div class="message-sender">
+                          <b>You {{chat.user}}</b>
+                        </div>
+                        <div class="message-content">
+                          {{chat.message}}
+                        </div>
+                      </div>
+                    </li>
+            
+                    <li class="message received">
+                      <div class="message-text">
+                        <div class="message-sender">
+
+                            <div class="row">
+                                <div class="col-10">
+                                  <b  class="text-white">AI Chatbot</b>
+                                </div>
+
+                                <div class="col-2">
+
+                                  <div class="leftSideContent">
+
+                                      <div class="row d-flex align-items-center">
+
+                                          <div class="col d-flex justify-content-end">
+                                            12:03:2023
+                                          </div>
+
+                                          <div class="col">
+                                            <button style="background: none; background-color: none;"><i style="font-size:15px; color:white;" id="play" class="fa">&#xf028;</i></button>                                              
+                                          </div>
+
+                                      </div>
+        
+                                  </div>
+
+                                </div>
+
+                            </div>
+                          
+                        </div>
+                        <div class="message-content text-white" id="answer">
+                          {{chat.response|linebreaks}}
+                          <!-- |linebreaks -->
+                        </div>
+                      </div>
+                    </li>
+            
+                      {% endif %}
+                    {% endfor %}
